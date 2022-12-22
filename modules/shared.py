@@ -94,7 +94,7 @@ parser.add_argument("--server-name", type=str, help="Sets hostname of server", d
 script_loading.preload_extensions(extensions.extensions_dir, parser)
 script_loading.preload_extensions(extensions.extensions_builtin_dir, parser)
 
-cmd_opts = parser.parse_args([])
+cmd_opts = parser.parse_args(['--ckpt-dir', r'H:\DEEPL\models\sd'])
 
 restricted_opts = {
     "samples_filename_pattern",

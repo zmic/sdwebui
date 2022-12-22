@@ -32,8 +32,8 @@ ldm.modules.attention.MemoryEfficientCrossAttention = ldm.modules.attention.Cros
 ldm.modules.attention.BasicTransformerBlock.ATTENTION_MODES["softmax-xformers"] = ldm.modules.attention.CrossAttention
 
 # silence new console spam from SD2
-ldm.modules.attention.print = lambda *args: None
-ldm.modules.diffusionmodules.model.print = lambda *args: None
+#ldm.modules.attention.print = lambda *args: None
+#ldm.modules.diffusionmodules.model.print = lambda *args: None
 
 def apply_optimizations():
     undo_optimizations()

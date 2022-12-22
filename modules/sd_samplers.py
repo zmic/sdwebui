@@ -373,6 +373,7 @@ class TorchHijack:
 
 # MPS fix for randn in torchsde
 def torchsde_randn(size, dtype, device, seed):
+    #print("torchsde_randn", seed, size)
     if device.type == 'mps':
         generator = torch.Generator(devices.cpu).manual_seed(int(seed))
         return torch.randn(size, dtype=dtype, device=devices.cpu, generator=generator).to(device)
@@ -380,7 +381,7 @@ def torchsde_randn(size, dtype, device, seed):
         generator = torch.Generator(device).manual_seed(int(seed))
         return torch.randn(size, dtype=dtype, device=device, generator=generator)
 
-
+#print("sd_samplers.py", torchsde.__path__) 
 torchsde._brownian.brownian_interval._randn = torchsde_randn
 
 
